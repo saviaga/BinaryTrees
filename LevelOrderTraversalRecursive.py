@@ -7,16 +7,16 @@
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
 
-        def levelOrderHelper(root, level):
+        def levelOrderHelper(root, level,ans):
             if root is None:
                 return
-            if len(self.ans) == level:
-                self.ans.append([])
+            if len(ans) == level:
+                ans.append([])
 
-            self.ans[level].append(root.val)
-            levelOrderHelper(root.left, level + 1)
-            levelOrderHelper(root.right, level + 1)
+            ans[level].append(root.val)
+            levelOrderHelper(root.left, level + 1,ans)
+            levelOrderHelper(root.right, level + 1,ans)
 
-        self.ans = []
-        levelOrderHelper(root, 0)
-        return self.ans
+        ans = []
+        levelOrderHelper(root, 0,ans)
+        return ans
