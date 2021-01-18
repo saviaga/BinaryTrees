@@ -6,14 +6,15 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        
         if root is None:
             return
-        res = []
+        
         queue = collections.deque([root])
+        ans = []
         
         while queue:
             level = []
+           
             for _ in range(len(queue)):
                 current = queue.popleft()
                 level.append(current.val)
@@ -21,6 +22,8 @@ class Solution:
                     queue.append(current.left)
                 if current.right:
                     queue.append(current.right)
-            res.append(level)
-        return res
+            ans.append(level)
+        return ans
+        
+            
         
