@@ -11,16 +11,14 @@ class Solution:
             return
         
         stack = []
-        res = []
+        ans = []
         current = root
         while current:
             stack.append(current)
             current = current.left
             while current == None and stack:
                 current = stack.pop()
-                res.append(current.val)
+                ans.append(current.val)
                 current = current.right
-        return res
-        
-    
+        return ans
         
