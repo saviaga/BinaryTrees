@@ -13,6 +13,7 @@ class Solution:
         stack = []
         ans = []
         current = root
+        
         while current:
             stack.append(current)
             current = current.left
@@ -21,4 +22,6 @@ class Solution:
                 ans.append(current.val)
                 current = current.right
         return ans
-                
+            
+            
+​
