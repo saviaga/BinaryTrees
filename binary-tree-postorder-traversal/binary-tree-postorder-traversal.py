@@ -13,14 +13,14 @@ class Solution:
         ans = []
         
         while stack:
-            current, visited = stack.pop()
+            current,visited = stack.pop()
             if visited:
                 ans.append(current.val)
             else:
-                stack.append([current,True])
+                stack.append((current,True))
                 if current.right:
-                    stack.append([current.right,False])
+                    stack.append((current.right,False))
                 if current.left:
-                    stack.append([current.left,False])
+                    stack.append((current.left,False))
         return ans
         
