@@ -21,4 +21,4 @@ class Solution:
                 ans.append(current.val)
                 current = current.right
         return ans
-        
+                
