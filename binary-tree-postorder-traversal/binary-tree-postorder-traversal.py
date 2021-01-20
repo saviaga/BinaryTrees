@@ -7,14 +7,21 @@
 class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         
+        if root is None:
+            return
         
-        def POHelper(root):
-            if root!=None:
-                POHelper(root.left)
-                POHelper(root.right)
-                self.ans.append(root.val)
-            
-            
-        self.ans=[]
-        POHelper(root)
-        return self.ans
+        stack = [(root,False)]
+        ans = []
+        
+        while stack:
+            current, visited = stack.pop()
+            if visited:
+                ans.append(current.val)
+            else:
+                stack.append((current,True))
+                if current.right:
+                    stack.append((current.right,False))
+                if current.left:
+                    stack.append((current.left,False))
+        return ans
+                
