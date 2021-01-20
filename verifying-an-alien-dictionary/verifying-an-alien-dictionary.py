@@ -22,7 +22,7 @@ class Solution:
             #print(w1,w2)
             
             #words = ["apple","app"],"apple" > "app", because 'l' > '∅',hence False
-            
+            #null is less than anything
             if w1 > w2:
                 return False
         return True
