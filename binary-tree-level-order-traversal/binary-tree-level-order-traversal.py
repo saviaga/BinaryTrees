@@ -14,7 +14,6 @@ class Solution:
         
         while queue:
             level = []
-           
             for _ in range(len(queue)):
                 current = queue.popleft()
                 level.append(current.val)
@@ -24,6 +23,5 @@ class Solution:
                     queue.append(current.right)
             ans.append(level)
         return ans
-        
             
         
