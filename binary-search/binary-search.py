@@ -1,20 +1,21 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         
-        def search_help(start, end, nums, target):
+        start = 0
+        end = len(nums)-1
+        
+        while start <= end:
+            middle = (start + end) //2
+            if nums[middle] == target:
+                return middle
+            if target < nums[middle]:
+                end = middle-1
+            elif target > nums[middle]:
+                start = middle+1
+        return -1
+                
             
-            
-            if start <= end:
-                middle = (start + end)//2
-                if target == nums[middle]:
-                    return middle
-                elif target > nums[middle]:
-                    return search_help(middle+1,end,nums,target)
-                else:
-                    return search_help(start,middle-1,nums,target)
-            else:
-                return -1
     
-        return search_help(0,len(nums)-1, nums, target)
+    
         
         
