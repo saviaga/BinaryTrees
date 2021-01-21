@@ -9,19 +9,14 @@ class Solution:
         filter_s = list(filter_s)
         filter_lower = [ch.lower() for ch in filter_s]
         
-        start = 0
+        start= 0
         end = len(filter_lower)-1
         
-        while start< end:
+        while start <=end:
             if filter_lower[start]!=filter_lower[end]:
                 return False
-            else:
-                start+=1
-                end-=1
+            start+=1
+            end-=1
         return True
         
-        
 ​
-            
-        
-        
